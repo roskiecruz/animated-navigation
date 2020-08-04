@@ -15,6 +15,14 @@ function bindEvent (e, method){
 function toggleNav() {
     // Toggle: menu bars open/closed
     menuBars.classList.toggle('change');
+    // Toggle: menu active
+    overlay.classList.toggle('overlay-active');
+    if (overlay.classList.contains('overlay-active')) {
+        // animate in - overlay
+        overlay.classList.replace('overlay-slide-left','overlay-slide-right');
+    } else {
+        overlay.classList.replace('overlay-slide-right','overlay-slide-left');
+    }
 }
 
 bindEvent(menuBars, toggleNav);
